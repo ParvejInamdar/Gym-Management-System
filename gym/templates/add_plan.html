@@ -1,0 +1,36 @@
+{% extends 'navigationbar.html' %}
+
+{% block body %}
+
+
+
+<div class="container" style="margin-top: 60px;">
+    <h2 class="text-center text-secondary font-weight-bold">Add Plan</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label><b>Name</b></label>
+        <input type="text" name="name" class="form-control" required>
+        <label><b>Amount.</b></label>
+        <input type="text" name="amount" class="form-control" required>
+        <label><b>Duration</b></label>
+        <input type="text" name="duration" class="form-control">
+        <input type="submit" value="Submit" class="form-control btn btn-secondary">
+    </form>
+</div>
+
+
+{% ifequal error "No" %}
+<script>
+    alert("Data Saved Sucessfully");
+    window.location=("{% url 'view_plan' %}");
+</script>
+{% endifequal %}
+
+{% ifequal error "Yes" %}
+<script>
+    alert("Try Again,Something went wrong!!!");
+</script>
+{% endifequal %}
+
+
+{% endblock %}

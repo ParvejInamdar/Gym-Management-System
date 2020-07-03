@@ -1,0 +1,53 @@
+{% extends 'navigationbar.html' %}
+
+{% block body %}
+
+
+
+<div class="container" style="margin-top: 60px;">
+    <h2 class="text-center text-secondary font-weight-bold">Add Enquiry</h2>
+    <form method="post">
+        {% csrf_token %}
+        <label><b>Name</b></label>
+        <input type="text" name="name" class="form-control" required>
+        <label><b>Contact</b></label>
+        <input type="text" name="contact" class="form-control" required>
+        <label><b>EmailID</b></label>
+        <input type="email" name="emailid" class="form-control">
+        <label><b>Age</b></label>
+        <input type="text" name="age" class="form-control" required>
+        <label><b>Gender</b></label>
+        <input type="radio" name="gender" value="male">male
+        <input type="radio" name="gender" value="female">Female
+        <br>
+        <label><b>Plan</b></label>
+        <input type="text" name="plan" class="form-control" required>
+        <label><b>Join Date</b></label>
+        <input type="date" name="joindate" class="form-control" required>
+        <label><b>Expire Date</b></label>
+        <input type="date" name="expireddate" class="form-control" required>
+        <label><b>Initial Amount</b></label>
+        <input type="text" name="initialamount" class="form-control" required>
+        <input type="submit" value="Submit" class="form-control btn btn-secondary">
+    </form>
+</div>
+
+
+
+
+
+{% ifequal error "No" %}
+<script>
+    alert("Data Saved Sucessfully");
+    window.location=("{% url 'view_member' %}");
+</script>
+{% endifequal %}
+
+{% ifequal error "Yes" %}
+<script>
+    alert("Try Again,Something went wrong!!!");
+</script>
+{% endifequal %}
+
+
+{% endblock %}

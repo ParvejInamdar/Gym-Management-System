@@ -1,0 +1,21 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+<div class="container" style="margin-top: 60px;">
+    <h2 class="text-center text-secondary font-weight-bold">Aboute Us</h2><br>
+    <div class="row">
+        <div class="col-sm-4 text-center">
+            <img src="{% static 'images/aboutus.jpg' %}" width="500" height="350" class="img-responsive">
+        </div>
+        <div class="col-sm-8 text-right" >
+            Whether you are a new to fitness, a total gym rat,<br>
+            only doing bodyweight exercises or looking for a way to log your crossfit sessions.<br>
+            With Gym Hero you can handle all of it.<br>
+             Everything is fully customizable to adapt to your workout style.
+        </div>
+    </div>
+</div>
+<footer class="text-center font-weight-bold mt-12">
+    <h5>Copyright &copy; 2020 , All Rights Reserved</h5>
+</footer>
+{% endblock %}

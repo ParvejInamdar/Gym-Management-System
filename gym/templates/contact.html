@@ -1,0 +1,29 @@
+{% extends 'navigationbar.html' %}
+{% load static %}
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page Title</title>
+	<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+</head>
+<body background="{% static 'images/gym2.jpg' %}" style="background-size: 100%;">
+    <div class="container" style="margin-left: 170px;">
+		<div class="contact-method">
+		<img src="{% static 'images/mail.png' %}" alt="">
+		<span>abc@gmail.com</span>
+	</div>
+		<div class="contact-method">
+		<img src="{% static 'images/contact.png' %}" alt="">
+		<span>1234567890</span>
+	</div>
+		<div class="contact-method" >
+		<img src="{% static 'images/address.png' %}" alt="">
+		<span><a href="#">abc@gmail.com</a></span>
+	</div>
+
+
+</body>
+</html>
+
+{% endblock %}
